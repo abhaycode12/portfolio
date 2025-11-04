@@ -30,7 +30,8 @@ export const heroData: HeroData = {
     name: 'Abhay Kumar Gupta',
     roles: ['a Web Developer', 'a WordPress Expert', 'a Problem Solver'],
     description: "I am a dedicated and skilled web developer, bringing a wealth of knowledge and experience in web design and development. With a passion for creating responsive, easy-to-use applications and a knack for problem-solving, I'm a quick learner ready for the next challenge.",
-    image: 'https://i.imgur.com/uSp03Gz.png'
+    image: 'https://i.imgur.com/uSp03Gz.png',
+    resumeUrl: '/Abhay_Kumar_Gupta_Resume.pdf' // Link to the resume PDF
 };
 
 export const aboutData: AboutData = {

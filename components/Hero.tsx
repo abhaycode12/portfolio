@@ -49,6 +49,16 @@ const Hero: React.FC<{ data: HeroData }> = ({ data }) => {
                     <p className="mt-6 text-lg text-[var(--text-secondary)] max-w-2xl">
                         {data.description}
                     </p>
+                    <div className="mt-8">
+                        <a 
+                            href={data.resumeUrl} 
+                            download="Abhay_Kumar_Gupta_Resume.pdf"
+                            className="button-primary text-white font-bold py-3 px-8 rounded-lg inline-block animate-fade-in-up"
+                            style={{ animationDelay: '500ms'}}
+                        >
+                            Download Resume
+                        </a>
+                    </div>
                 </div>
                  <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                     <div className="relative w-72 h-72 lg:w-96 lg:h-96">

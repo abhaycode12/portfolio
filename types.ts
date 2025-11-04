@@ -5,6 +5,7 @@ export interface HeroData {
     roles: string[];
     description: string;
     image: string;
+    resumeUrl: string;
 }
 
 export interface ServiceItem {
