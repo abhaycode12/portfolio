@@ -32,7 +32,7 @@ export const heroData: HeroData = {
     roles: ['Web Developer', 'WordPress Expert', 'Problem Solver'],
     description: "I am a dedicated and skilled web developer, bringing a wealth of knowledge and experience in web design and development. With a passion for creating responsive, easy-to-use applications and a knack for problem-solving, I'm a quick learner ready for the next challenge.",
     image: 'https://raw.githubusercontent.com/abhaycode12/portfolio/main/image/abha.jpeg',
-    resumeUrl: 'Abhay_Kumar_Gupta_Resume.pdf'
+    resumeUrl: 'https://raw.githubusercontent.com/abhaycode12/portfolio/main/Abhay_Kumar_Gupta_Resume.pdf'
 };
 
 export const aboutData: AboutData = {
