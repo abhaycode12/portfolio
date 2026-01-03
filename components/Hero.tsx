@@ -70,11 +70,11 @@ const Hero: React.FC<{ data: HeroData }> = ({ data }) => {
                         <div className="relative w-full h-full overflow-hidden rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-[6px] border-slate-800 transition-all duration-700 group-hover:scale-[1.03]">
                              <img 
                                 src={data.image} 
-                                alt={data.name} 
+                                alt={data.name}  loading="lazy" 
                                 className="w-full h-full object-cover transition-all duration-700"
                                 onError={(e) => {
                                     console.error("Failed to load image at:", data.image);
-                                    (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x800/1e293b/ffffff?text=ABHAY+GUPTA';
+                                    (e.target as HTMLImageElement).src = 'https://raw.githubusercontent.com/abhaycode12/portfolio/main/image/abha.jpeg';
                                 }}
                             />
                             {/* Subtle Depth Overlay */}
