@@ -31,8 +31,8 @@ export const heroData: HeroData = {
     name: 'Abhay Kumar Gupta',
     roles: ['Web Developer', 'WordPress Expert', 'Problem Solver'],
     description: "I am a dedicated and skilled web developer, bringing a wealth of knowledge and experience in web design and development. With a passion for creating responsive, easy-to-use applications and a knack for problem-solving, I'm a quick learner ready for the next challenge.",
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1000',
-    resumeUrl: '/Abhay_Kumar_Gupta_Resume.pdf' // Link to the resume PDF
+    image: './image/abhay.png',
+    resumeUrl: 'Abhay_Kumar_Gupta_Resume.pdf'
 };
 
 export const aboutData: AboutData = {
@@ -158,7 +158,7 @@ export const educationData: EducationItem[] = [
     {
         period: '2016 - 2019',
         degree: 'BCA (Bachelor of Computer Applications)',
-        institution: 'K.C.M.T, Bareilly (affiliated to M.J.P.Rohilkhand University)'
+        institution: 'K.C.MT, Bareilly (affiliated to M.J.P.Rohilkhand University)'
     },
     {
         period: '2016',
@@ -192,7 +192,7 @@ export const skillsData: SkillItem[] = [
 ];
 
 export const contactData: ContactData = {
-    phone: '7351658446',
+    phone: '917351658446',
     email: 'abhaycode12@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/abhay-kumar-gupta-webdev/' // Assuming a URL, resume had icon only
+    linkedin: 'https://www.linkedin.com/in/abhay-kumar-gupta-webdev/'
 };

@@ -14,9 +14,18 @@ const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
 
 const ContactInfoCard: React.FC<{ data: ContactData; heroData: HeroData }> = ({ data, heroData }) => (
     <div className="bg-slate-800/50 p-8 rounded-2xl h-full border border-slate-700/50 backdrop-blur-sm shadow-xl">
-        <div className="relative mb-6 group">
+        <div className="relative mb-6 group flex justify-center">
             <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-sky-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <img src={heroData.image} alt={heroData.name} className="relative w-32 h-32 rounded-2xl mx-auto shadow-2xl object-cover" />
+            <div className="relative w-40 h-52 rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-700/50">
+                <img 
+                    src={heroData.image} 
+                    alt={heroData.name} 
+                    className="w-full h-full object-cover" 
+                    onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x600/1e293b/ffffff?text=ABHAY';
+                    }}
+                />
+            </div>
         </div>
         <h3 className="text-2xl font-bold text-white text-center">{heroData.name}</h3>
         <p className="text-teal-400 text-center font-medium mb-4">{heroData.roles[0]}</p>
@@ -73,7 +82,6 @@ const ContactForm: React.FC<{ email: string }> = ({ email }) => {
         setStatus('processing');
 
         try {
-            // Step 1: AI Verification & Analysis
             const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
             const response = await ai.models.generateContent({
                 model: 'gemini-3-flash-preview',
@@ -84,14 +92,12 @@ const ContactForm: React.FC<{ email: string }> = ({ email }) => {
             });
             setAiLog(response.text || "Message verified and optimized for transmission.");
 
-            // Step 2: Attempt Real Delivery
             const fetchPromise = fetch(FORMSPREE_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify(formData)
             });
 
-            // Set a timeout for the fetch
             const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error("Timeout")), 4000));
             
             await Promise.race([fetchPromise, timeoutPromise]);
@@ -141,15 +147,6 @@ const ContactForm: React.FC<{ email: string }> = ({ email }) => {
                             className="w-full py-4 bg-slate-700 hover:bg-slate-600 text-white rounded-xl transition-all font-semibold"
                         >
                             Send Another Message
-                        </button>
-                    )}
-                    
-                    {isFallback && (
-                         <button 
-                            onClick={() => setStatus('idle')} 
-                            className="text-slate-500 hover:text-slate-300 text-xs underline mt-2"
-                        >
-                            Edit message and retry auto-send
                         </button>
                     )}
                 </div>
@@ -217,13 +214,6 @@ const Contact: React.FC<{ data: ContactData; heroData: HeroData }> = ({ data, he
                     </div>
                     <div className="lg:col-span-3 animate-fade-in-up">
                         <ContactForm email={data.email} />
-                    </div>
-                </div>
-                <div className="mt-20 text-center">
-                    <div className="inline-flex items-center space-x-4 px-6 py-2 bg-slate-800/30 border border-slate-700/50 rounded-full">
-                        <span className="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Powered by</span>
-                        <div className="h-4 w-px bg-slate-700"></div>
-                        <span className="text-teal-400 text-[10px] font-black uppercase tracking-[0.3em]">Abhay Gupta</span>
                     </div>
                 </div>
             </div>
