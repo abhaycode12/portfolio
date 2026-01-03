@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { HeroData } from '../types';
 
@@ -61,12 +62,12 @@ const Hero: React.FC<{ data: HeroData }> = ({ data }) => {
                     </div>
                 </div>
                  <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                    <div className="relative w-72 h-72 lg:w-96 lg:h-96">
-                       <div className="absolute inset-0 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] rounded-full blur-xl opacity-50"></div>
+                    <div className="relative w-72 h-72 lg:w-96 lg:h-[450px]">
+                       <div className="absolute -inset-4 bg-gradient-to-tr from-[var(--gradient-start)] to-[var(--gradient-end)] rounded-[2.5rem] blur-2xl opacity-30 animate-pulse"></div>
                         <img 
                             src={data.image} 
                             alt={data.name} 
-                            className="relative w-full h-full object-cover rounded-full shadow-2xl border-4 border-slate-800"
+                            className="relative w-full h-full object-cover rounded-[2rem] shadow-2xl border-4 border-slate-800 transition-transform duration-500 hover:scale-[1.02]"
                         />
                     </div>
                 </div>
